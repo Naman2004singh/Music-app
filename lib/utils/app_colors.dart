@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   //Gradients
-  static const LinearGradient homeGradient = LinearGradient(colors: [redColor,brownColor]);
+  static const LinearGradient homeGradient = LinearGradient(colors: [redColor,brownColor],  
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+  );
   //colors
   static const Color redColor = Color(0xffA90140);
   static const Color brownColor = Color(0xff550120);

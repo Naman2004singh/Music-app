@@ -22,4 +22,9 @@ class AppTextstyle {
       fontSize: 14,
       fontWeight: FontWeight.w700,
       color: AppColors.blackColor);
+  static const TextStyle newStyle = TextStyle(
+      fontFamily: "Lobster",
+      fontSize: 40,
+      fontWeight: FontWeight.w700,
+      color: AppColors.whiteColor);
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:music_app/repository/providers.dart';
+import 'package:music_app/utils/app_colors.dart';
 import 'package:music_app/view/appNavigation/widgets/custom_navigation.dart';
 import 'package:music_app/view/home/home_screen.dart';
 import 'package:music_app/view/news/news_screen.dart';
@@ -36,6 +37,7 @@ class AppNaviagtion extends ConsumerWidget {
           }
         },
         child: Scaffold(
+          backgroundColor: AppColors.blackColor,
           body: IndexedStack(
             index: selectedIndex,
             children: const [
