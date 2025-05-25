@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:music_app/utils/routes/app_routes.dart';
 import 'package:music_app/utils/routes/routes_name.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -24,4 +25,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

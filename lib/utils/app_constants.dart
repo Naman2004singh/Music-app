@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class AppConstants {
-  static double screenWidth(BuildContext context) {
+  static screenWidth(BuildContext context) {
     return MediaQuery.of(context).size.width;
   }
 
-  static double screenHeight(BuildContext context) {
+  static screenHeight(BuildContext context) {
     return MediaQuery.of(context).size.height;
   }
 

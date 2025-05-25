@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/utils/routes/routes_name.dart';
-import 'package:music_app/view/app_naviagtion.dart';
+import 'package:music_app/view/appNavigation/app_naviagtion.dart';
 import 'package:music_app/view/home/home_screen.dart';
 import 'package:music_app/view/news/news_screen.dart';
 import 'package:music_app/view/projects/project_screen.dart';
