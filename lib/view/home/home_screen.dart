@@ -18,53 +18,56 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.blackColor,
-      body: ListView(
-        children: [
-          const StaticContainer(),
-          const SizedBox(height: AppConstants.size15),
-          const Text(
-            AppStrings.text04,
-            style: AppTextstyle.headlineMedium,
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: AppConstants.size15),
-          Consumer(
-            builder: (context, ref, child) {
-              return StreamBuilder<QuerySnapshot>(
-                stream: FirebaseFirestore.instance
-                    .collection('sevice card')
-                    .snapshots(),
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return const Center(child: CircularProgressIndicator());
-                  }
-                  if (snapshot.hasError) {
-                    return const Center(
-                        child: Text('Error fetching music services'));
-                  }
-                  final musicServices = snapshot.data?.docs ?? [];
-                  return ListView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: musicServices.length,
-                    itemBuilder: (context, index) {
-                      DocumentSnapshot documentSnapshot = musicServices[index];
-                      return MusicServiceList(
-                        title: documentSnapshot['title'] ?? 'No Title',
-                        description:
-                            documentSnapshot['description'] ?? 'No Description',
-                        imageUrl: documentSnapshot['imagePath'] ?? '',
-                        logoUrl: documentSnapshot['assetPath'] ?? '',
-                      );
-                    },
-                  );
-                },
-              );
-            },
-          )
-        ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: AppColors.blackColor,
+        body: ListView(
+          children: [
+            const StaticContainer(),
+            const SizedBox(height: AppConstants.size15),
+            const Text(
+              AppStrings.text04,
+              style: AppTextstyle.headlineMedium,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: AppConstants.size15),
+            Consumer(
+              builder: (context, ref, child) {
+                return StreamBuilder<QuerySnapshot>(
+                  stream: FirebaseFirestore.instance
+                      .collection('sevice card')
+                      .snapshots(),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const Center(child: CircularProgressIndicator());
+                    }
+                    if (snapshot.hasError) {
+                      return const Center(
+                          child: Text('Error fetching music services'));
+                    }
+                    final musicServices = snapshot.data?.docs ?? [];
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: musicServices.length,
+                      itemBuilder: (context, index) {
+                        DocumentSnapshot documentSnapshot =
+                            musicServices[index];
+                        return MusicServiceList(
+                          title: documentSnapshot['title'] ?? 'No Title',
+                          description: documentSnapshot['description'] ??
+                              'No Description',
+                          imageUrl: documentSnapshot['imagePath'] ?? '',
+                          logoUrl: documentSnapshot['assetPath'] ?? '',
+                        );
+                      },
+                    );
+                  },
+                );
+              },
+            )
+          ],
+        ),
       ),
     );
   }
