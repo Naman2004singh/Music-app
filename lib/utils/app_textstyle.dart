@@ -22,6 +22,11 @@ class AppTextstyle {
       fontSize: 14,
       fontWeight: FontWeight.w700,
       color: AppColors.blackColor);
+  static const TextStyle bodyMedium = TextStyle(
+      fontFamily: "Syne",
+      fontSize: 16,
+      fontWeight: FontWeight.w500,
+      color: AppColors.lightGreyColor);
   static const TextStyle newStyle = TextStyle(
       fontFamily: "Lobster",
       fontSize: 40,
