@@ -21,6 +21,9 @@ MVVM Architecture: Model-View-ViewModel pattern
 Custom Widgets: For reusable and scalable UI components
 
 ## Background Image
+
+https://github.com/user-attachments/assets/c7da9003-3897-4d54-bed5-255a5cb1a927
+
 ![WhatsApp Image 2025-05-26 at 21 50 17_aca782dc](https://github.com/user-attachments/assets/7876f84f-7523-4157-8071-0f71507f7bd3)
 
 ![WhatsApp Image 2025-05-26 at 21 50 14_35f050e2](https://github.com/user-attachments/assets/8c4c9575-df69-4b09-883a-1796f8385fe5)
