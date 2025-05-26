@@ -5,4 +5,5 @@ class RoutesName {
   static const String trackboxScreen = '/trackBoxScreen';
   static const String projectScreen = '/projectScreen';
   static const String navigationScreen = '/navigationScreen';
+  static const String musicDetailScreen = '/musicDetailScreen';
 }

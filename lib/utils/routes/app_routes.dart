@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:music_app/utils/routes/routes_name.dart';
 import 'package:music_app/view/appNavigation/app_naviagtion.dart';
 import 'package:music_app/view/home/home_screen.dart';
+import 'package:music_app/view/home/widgets/music_detail_screen.dart';
 import 'package:music_app/view/news/news_screen.dart';
 import 'package:music_app/view/projects/project_screen.dart';
 import 'package:music_app/view/trackBox/trackbox_screen.dart';
@@ -24,6 +25,9 @@ class AppRoutes {
       //navigationScreen
       case RoutesName.navigationScreen:
         return MaterialPageRoute(builder: (context) => const AppNaviagtion(),);
+      //musicDetailScreen
+      case RoutesName.musicDetailScreen:
+        return MaterialPageRoute(builder: (context) => const MusicDetailScreen(),); 
       default:
         return MaterialPageRoute(
           builder: (context) {

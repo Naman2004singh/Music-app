@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:music_app/repository/music_model.dart';
 import 'package:music_app/utils/app_colors.dart';
 import 'package:music_app/utils/app_constants.dart';
 import 'package:music_app/utils/app_strings.dart';
@@ -53,12 +54,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       itemBuilder: (context, index) {
                         DocumentSnapshot documentSnapshot =
                             musicServices[index];
+                            final musicService = MusicModel(
+                              title: documentSnapshot['title'] ?? '',
+                              description: documentSnapshot['description'] ?? '',
+                              imageUrl: documentSnapshot['imageUrl'] ?? '',
+                              logoUrl: documentSnapshot['logoUrl'] ?? '',
+                            );
                         return MusicServiceList(
-                          title: documentSnapshot['title'] ?? 'No Title',
-                          description: documentSnapshot['description'] ??
-                              'No Description',
-                          imageUrl: documentSnapshot['imagePath'] ?? '',
-                          logoUrl: documentSnapshot['assetPath'] ?? '',
+                          musicModel: musicService,
                         );
                       },
                     );
