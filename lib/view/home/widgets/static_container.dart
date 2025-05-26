@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/utils/app_colors.dart';
 import 'package:music_app/utils/app_constants.dart';
+import 'package:music_app/utils/app_strings.dart';
 import 'package:music_app/utils/app_textstyle.dart';
 import 'package:music_app/utils/input_decoration.dart';
+import 'package:music_app/view/home/widgets/book_now_button.dart';
 
 class StaticContainer extends StatelessWidget {
   const StaticContainer({super.key});
@@ -39,7 +41,24 @@ class StaticContainer extends StatelessWidget {
                     onPressed: () {}, icon: const Icon(Icons.person)),
               )
             ],
-          )
+          ),
+          SizedBox(
+            height: AppConstants.screenHeight(context) * 0.05,
+          ),
+          const Text(
+            AppStrings.text01,
+            style: AppTextstyle.headlineLarge,
+          ),
+          const Text(
+            AppStrings.text02,
+            style: AppTextstyle.newStyle,
+          ),
+          const Text(
+            AppStrings.text03,
+            style: AppTextstyle.headlineMedium,
+          ),
+          const SizedBox(height: AppConstants.size20),
+          const BookNowButton()
         ],
       ),
     );

@@ -16,7 +16,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: AppColors.blackColor,
       body: ListView(
-        children: const [StaticContainer()],
+        children: const [
+          StaticContainer()],
       ),
     );
   }
