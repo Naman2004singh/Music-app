@@ -1,6 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:music_app/utils/app_colors.dart';
 import 'package:music_app/utils/app_constants.dart';
+import 'package:music_app/utils/app_strings.dart';
+import 'package:music_app/utils/app_textstyle.dart';
+import 'package:music_app/view/home/widgets/music_service_list.dart';
 import 'package:music_app/view/home/widgets/static_container.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -16,8 +21,46 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: AppColors.blackColor,
       body: ListView(
-        children: const [
-          StaticContainer()],
+        children: [
+          const StaticContainer(),
+          const SizedBox(height: AppConstants.size20),
+          const Text(
+            AppStrings.text04,
+            style: AppTextstyle.headlineMedium,
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: AppConstants.size20),
+          Consumer(
+            builder: (context, ref, child) {
+              return StreamBuilder<QuerySnapshot>(
+                stream: FirebaseFirestore.instance.collection('service card').snapshots(),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Center(child: CircularProgressIndicator());
+                  }
+                  if (snapshot.hasError) {
+                    return const Center(child: Text('Error fetching music services'));
+                  }
+                  final musicServices = snapshot.data?.docs ?? [];
+                  return ListView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: musicServices.length,
+                    itemBuilder: (context, index) {
+                      DocumentSnapshot documentSnapshot = musicServices[index];
+                      return MusicServiceList(
+                        title: documentSnapshot['title'] ?? 'No Title',
+                        description: documentSnapshot['description'] ?? 'No Description',
+                        imageUrl: documentSnapshot['imagePath'] ?? '',
+                        logoUrl: documentSnapshot['assetPath'] ?? '',
+                      ); 
+                    },
+                  );
+                },
+              );
+            },
+          )
+        ],
       ),
     );
   }
