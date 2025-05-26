@@ -1,16 +1,30 @@
-# music_app
+# Flutter Music App
+This is a beautifully designed Flutter music application that follows the MVVM architecture and utilizes modern development practices to ensure scalability, maintainability, and real-time interactivity.
 
-A new Flutter project.
+## ✨ Features
+🔁 Real-time Data Updates using StreamBuilder and Firebase Realtime Database
+📦 State Management with Riverpod and Providers
+🎨 Figma-accurate UI recreation with custom widgets
+🔄 Dynamic Music Cards that display:
 
-## Getting Started
+## Description
+🔧 MVVM Architecture for a clean separation of concerns
+🧭 Custom Navigation using onGenerateRoute for smooth and organized routing
+🧱 Reusable Widgets for high scalability and maintainability
+🧼 Clean and Well-Structured Codebase
 
-This project is a starting point for a Flutter application.
+## 🛠️ Tech Stack
+Flutter: UI framework
+Firebase: Realtime database for live updates
+Riverpod: State management solution
+MVVM Architecture: Model-View-ViewModel pattern
+Custom Widgets: For reusable and scalable UI components
 
-A few resources to get you started if this is your first Flutter project:
+## Background Image
+![WhatsApp Image 2025-05-26 at 21 50 17_aca782dc](https://github.com/user-attachments/assets/7876f84f-7523-4157-8071-0f71507f7bd3)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![WhatsApp Image 2025-05-26 at 21 50 14_35f050e2](https://github.com/user-attachments/assets/8c4c9575-df69-4b09-883a-1796f8385fe5)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![WhatsApp Image 2025-05-26 at 21 50 13_424ce5a4](https://github.com/user-attachments/assets/d298797b-c95a-44ff-a0b1-d0c1e3318a46)
+
+
