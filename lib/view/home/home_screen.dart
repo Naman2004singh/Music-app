@@ -23,23 +23,26 @@ class _HomeScreenState extends State<HomeScreen> {
       body: ListView(
         children: [
           const StaticContainer(),
-          const SizedBox(height: AppConstants.size20),
+          const SizedBox(height: AppConstants.size15),
           const Text(
             AppStrings.text04,
             style: AppTextstyle.headlineMedium,
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: AppConstants.size20),
+          const SizedBox(height: AppConstants.size15),
           Consumer(
             builder: (context, ref, child) {
               return StreamBuilder<QuerySnapshot>(
-                stream: FirebaseFirestore.instance.collection('service card').snapshots(),
+                stream: FirebaseFirestore.instance
+                    .collection('sevice card')
+                    .snapshots(),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return const Center(child: CircularProgressIndicator());
                   }
                   if (snapshot.hasError) {
-                    return const Center(child: Text('Error fetching music services'));
+                    return const Center(
+                        child: Text('Error fetching music services'));
                   }
                   final musicServices = snapshot.data?.docs ?? [];
                   return ListView.builder(
@@ -50,10 +53,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       DocumentSnapshot documentSnapshot = musicServices[index];
                       return MusicServiceList(
                         title: documentSnapshot['title'] ?? 'No Title',
-                        description: documentSnapshot['description'] ?? 'No Description',
+                        description:
+                            documentSnapshot['description'] ?? 'No Description',
                         imageUrl: documentSnapshot['imagePath'] ?? '',
                         logoUrl: documentSnapshot['assetPath'] ?? '',
-                      ); 
+                      );
                     },
                   );
                 },

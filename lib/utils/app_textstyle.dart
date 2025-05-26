@@ -17,6 +17,11 @@ class AppTextstyle {
       fontSize: 14,
       fontWeight: FontWeight.w400,
       color: AppColors.whiteColor);
+    static const TextStyle headlineExtraSmall = TextStyle(
+      fontFamily: "Syne",
+      fontSize: 12,
+      fontWeight: FontWeight.w400,
+      color: AppColors.whiteColor);
    static const TextStyle bodyLarge = TextStyle(
       fontFamily: "Syne",
       fontSize: 18,
