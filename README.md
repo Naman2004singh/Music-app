@@ -20,6 +20,10 @@ Riverpod: State management solution
 MVVM Architecture: Model-View-ViewModel pattern
 Custom Widgets: For reusable and scalable UI components
 
+## APK file
+
+https://drive.google.com/file/d/1B9nN0l-aAT16nB7x7EOMTbq44txgj8vX/view?usp=sharing
+
 ## Background Image
 
 https://github.com/user-attachments/assets/c7da9003-3897-4d54-bed5-255a5cb1a927
